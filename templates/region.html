@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- index-2 06:41:43 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <title>ABOUT-UZ | ASOSIY SAHIFA</title>
+
+    <!-- responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- For IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- master stylesheet -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Responsive stylesheet -->
+    <link rel="stylesheet" href="/static/css/responsive.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+
+    <!-- Fixing Internet Explorer-->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="js/html5shiv.js"></script>
+    <![endif]-->
+   
+ 
+<style>
+.hover-element:hover:after {
+  content: "Assalomu alaykum hurmatli hakam a’zolari ayni damda mehmonxona va restoranlar bilan hamkorlik qilish harakatidamiz shartnomamiz yoqligi uchun mehmonxona va restoranlar xizmati qo‘sha olmadik endi oktabr oyi ichi qo‘shishga harakat qilyapmiz.";
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 14px;
+}
+::selection {
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+}
+</style>
+</head>
+
+<body>
+    <div class="boxed_wrapper">
+
+        <div class="preloader"></div>
+
+        <!-- Start Top Bar style2 -->
+        <section class="top-bar-style2">
+            <div class="top-style2 clearfix">
+                <div class="top-style2-left">
+                    <p><span class="icon-music"></span>Biz bilan bog'lanish</p>
+                    <ul>
+                        <li>+998 90 380 07 80</li>
+                        <li>about.uz@ya.ru</li>
+                        <li>24/7</li>
+                    </ul>
+                </div>
+                <!-- <div class="top-style2-right">
+                    <ul class="top-right-menu">
+                        <li class="top-right-menu"><a href="#">Bizning hamkorlar</a></li>
+                        <li class="top-right-menu"><a href="#">Biz haqimizda</a></li>
+                    </ul>
+                    
+                </div> -->
+            </div>
+        </section>
+        <!-- End Top Bar style2 -->
+
+        <!--Start Main Header-->
+        <header class="main-header header-style2 stricky">
+            <div class="inner-container clearfix">
+                <div class="logo-box-style2 float-left" style="width:170px; height: 10px;">
+                    <a href="#">
+                        <img src="/static/images/images-shaharlar/doppi_logo.png" alt="Awesome Logo">
+                    </a>
+                </div>
+                <div class="main-menu-box float-right">
+                    <nav class="main-menu style2 clearfix">
+                        <div class="navbar-header clearfix">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            
+                            <ul class="navigation clearfix">
+                                
+                                <li><a href="/">Asosiy sahifa</a></li>
+
+                                <li class="dropdown current"><a href="{% url 'main:region' %}">Viloyatlar</a>
+                                    <ul>
+                                        {% for r in region %}
+                                        <li><a href="{% url 'main:region_detail' r.id %}">{{r.name}}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown"><a href="{% url 'main:history_place' %}">Tarixiy joylar</a>
+                                <ul>
+                                    {% for h in history_all %}
+                                    <li><a href="{% url 'main:history_detail' h.region.id h.id %}">{{h.name}}</a></li>
+                                    {% endfor %}
+                                </ul>    
+                                </li>
+                                <!-- <li class="dropdown"><a href="#">Turizm turlari</a>
+                                    <ul>
+                                        <li><a href="#">Sharzibabz</a></li>
+                                    </ul>
+                                </li> -->
+                                <li class="dropdown"><a href="{% url 'main:attractions' %}">Diqqatga sazovor joylar</a>
+                                    <ul>
+                                        {% for t in top_place %}
+                                        <li><a href="{% url 'main:attraction_detail' t.region.id t.id %}">{{t.name}}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                <li class="hover-element"><a href="/" >Xizmatlar</a>
+                                    
+                                 
+                                </li>
+
+                                                            
+                                
+                                <!-- <li><a href="#">Biz haqimizda</a></li> -->
+                                <li><a href="{% url 'main:contact' %}">Bog'lanish</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </nav>
+                    
+                </div>
+            </div>
+        </header>
+        <!--End Main Header-->
+
+ <!--Start breadcrumb area-->
+ <section class="breadcrumb-area style2" style="background-image: url(/static/images/thumb_1608_1920_0_0_0_auto.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="inner-content-box clearfix">
+                    <div class="title-s2 text-center">
+                        <span>O'zbekiston barcha viloyatari</span>
+                        <h1>Viloyatlar</h1>
+                    </div>
+                    <div class="breadcrumb-menu float-left">
+                        <ul class="clearfix">
+                            <li><a href="/">Asosiy sahifa</a></li>
+                            <li class="active">Viloyatlar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+
+
+
+
+
+<section class="main-project-area style2">
+            <div class="container">
+                <div class="sec-title">
+                    <!-- <p>Projects</p> -->
+                    <div class="title clr-white " style="color: #000;">O'zbekiston<span> viloyatlari</span></div>
+                </div>
+
+
+                <div class="row filter-layout masonary-layout">
+                    
+                    <!--Start single project item-->
+                    {% for r in region %}
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 filter-item mod contem">
+
+                        <div class="single-project-style5">
+                    <a href="{% url 'main:region_detail' r.id %}">
+
+                            <div class="img-holder">
+                                <div class="inner">
+                                    <img src="{{r.image_region.url}}" alt="Awesome Image" style="width: 366px; height:253px   ;">
+                                    <div class="overlay-box">
+                                        <div class="box">
+                                            <div class="link">
+                                                <a href="{% url 'main:region_detail' r.id %}"><span class="icon-out"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title">
+                                <span>{{r.teg}}</span>
+                                <h3><a href="{% url 'main:region_detail' r.id %}">{{r.name}}</a></h3>
+                            </div>
+                        </a>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!--End single project item-->
+                   
+                </div>
+             
+            </div>
+        </section>
+<!--Start Recently Project style2 Area-->
+<section class="recently-project-style2-area">
+    <div class="container">
+        <div class="sec-title text-center">
+            <div class="title">Tarixiy  <span>joylar</span></div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="project-carousel-v2 owl-carousel owl-theme">
+                    <!--Start single project style1-->
+                    {% for h in history_all %}
+                    <div class="single-project-style2">
+                        <div class="img-holder">
+                            <img src="{{h.image_header.url}}" alt="Awesome Image" style="width: 384px; height: 250px;">
+                            <div class="read-more">
+                                <a href="#"><span class="icon-next"></span></a>
+                            </div>
+                            <div class="title-box">
+                                <h3>{{h.name}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!--End single project style1-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Recently Project style2 Area-->
+
+    
+
+             <!--Start footer area Style4-->
+             <footer class="footer-area style4">
+                <div class="container">
+                    <div class="row">
+                        <!--Start single footer widget-->
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="single-footer-widget marbtm50-s4">
+                                <div class="our-info-box">
+                                    <div class="footer-logo">
+                                        <a href="index-2.html">
+                                            <img src="/static/images/logo_white.png " alt="Awesome Logo">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+                        <!--Start single footer widget-->
+                        <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                            <div class="single-footer-widget s4">
+                                <div class="title-style2">
+                                    <h3>Viloyatlar</h3>
+                                </div>
+                                <div class="usefull-links">
+                                    <ul class="float-left">
+                                        {% for r in region %}
+                                        <li><a href="{% url 'main:region_detail' r.id %}">{{r.name}}</a></li>
+                                        {% endfor %}
+                                    </ul>                               
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+                           <!--Start single footer widget-->
+                           <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                            <div class="single-footer-widget s4">
+                                <div class="title-style2">
+                                    <h3>Diqqatga sazovor joylar</h3>
+                                </div>
+                                <div class="usefull-links">
+                                    <ul class="float-left">
+                                        {% for t in top_place %}
+                                        <li><a href="{% url 'main:attraction_detail' t.region.id t.id%}">{{t.name}}</a></li>
+                                        {% endfor %}
+                                    </ul>                               
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+                       <!--Start single footer widget-->
+                       <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                        <div class="single-footer-widget s4">
+                            <div class="title-style2">
+                                <h3>Tarixiy joylar</h3>
+                            </div>
+                            <div class="usefull-links">
+                                <ul class="float-left">
+                                    {% for hr in history_place_all %}
+                                    <li><a href="{% url 'main:history_detail' hr.region.id hr.id %}">{{hr.name}}</a></li>
+                                    {% endfor %}
+                                </ul>                               
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single footer widget-->
+                     <!--Start single footer widget-->
+                     <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                        <div class="single-footer-widget s4">
+                            <div class="title-style2">
+                                <h3>Xizmatlar</h3>
+                            </div>
+                            <div class="usefull-links">
+                                <ul class="float-left">
+                                    <li><a href="https://hotels.about-uz.com">Mehmohonalar</a></li>
+                                </ul>                               
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single footer widget-->
+                    </div>
+                </div>
+            </footer>
+            <!--End footer area style4-->
+        
+            <!--Start Footer Contact Info Area-->
+            <section class="footer-contact-info-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <ul class="footer-contact-info clearfix">
+                                <li>
+                                    <div class="single-footer-contact-info">
+                                        <div class="inner">
+                                            <div class="icon">
+                                                <span class="icon-global"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>Uzbekistan, Tashkent<br> Mustaqilik prospekt, 64 uy</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single-footer-contact-info">
+                                        <div class="inner">
+                                            <div class="icon">
+                                                <span class="icon-support1"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>+998 90 380 07 80<br> <span>24/7</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single-footer-contact-info">
+                                        <div class="inner">
+                                            <div class="icon">
+                                                <span class="icon-shipping-and-delivery"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>about.uz@ya.ru<br> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+        
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--End Footer Contact Info Area-->
+        
+            <!--Start footer bottom area-->
+            <section class="footer-bottom-area style3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <div class="copyright-text text-center">
+                                <p><a href="https://www.unic-group.org" target="_blank">UNIC GROUP</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--End footer bottom area-->
+        
+        
+            </div>
+        
+        
+            <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+        
+        
+        
+            <script src="/static/js/jquery.js"></script>
+            <script src="/static/js/appear.js"></script>
+            <script src="/static/js/bootstrap.bundle.min.js"></script>
+            <script src="/static/js/bootstrap-select.min.js"></script>
+            <script src="/static/js/isotope.js"></script>
+            <script src="/static/jquery.bootstrap-touchspin.js"></script>
+            <script src="/static/js/jquery.countTo.js"></script>
+            <script src="/static/js/jquery.easing.min.js"></script>
+            <script src="/static/js/jquery.enllax.min.js"></script>
+            <script src="/static/js/jquery.fancybox.js"></script>
+            <script src="/static/js/jquery.mixitup.min.js"></script>
+            <script src="/static/js/jquery.paroller.min.js"></script>
+            <script src="/static/js/owl.js"></script>
+            <script src="/static/js/validation.js"></script>
+            <script src="/static/js/wow.js"></script>
+        
+            <!---
+        <script src="js/gmaps.js"></script>
+        <script src="http://maps.google.com/maps/api/js?key=AIzaSyB2uu6KHbLc_y7fyAVA4dpqSVM4w9ZnnUw"></script>
+        <script src="js/mapapi.js"></script> 
+        --->
+            <script src="/static/js/map-helper.js"></script>
+        
+            <script src="/static/assets/language-switcher/jquery.polyglot.language.switcher.js"></script>
+            <script src="/static/assets/timepicker/timePicker.js"></script>
+            <script src="/static/assets/html5lightbox/html5lightbox.js"></script>
+        
+            <!--Revolution Slider-->
+            <script src="/static/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+            <script src="/static/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+            <script src="/static/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+            <script src="/static/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+            <script src="/static/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+            <script src="/static/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+            <script src="/static/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+            <script src="/static/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+            <script src="/static/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+            <script src="/static/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+            <script src="/static/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
+            <script src="/static/js/main-slider-script.js"></script>
+        
+            <!-- thm custom script -->
+            <script src="/static/js/custom.js"></script>
+        
+        
+        
+        </body>
+        
+        
+        <!-- index-2 06:43:55 GMT -->
+        </html>
